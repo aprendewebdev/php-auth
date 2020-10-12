@@ -1,20 +1,10 @@
-<?php
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-?>
+<?php require_once 'includes/header.inc.php'; ?>
+<?php require_once 'includes/redirect_to_home.inc.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>PHP Mysql Authentication</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-    <div class="container">
-        <?php if ($_SESSION['user']): ?>
-            <p>Hola, <?= $_SESSION['user']['first_name'] ?> <?= $_SESSION['user']['last_name'] ?> </p>
-        <?php endif; ?>
-    </div>
-</body>
-</html>
+
+<div class="dash-container">
+    <?php if ($_SESSION['user']): ?>
+        <h2>Hola, <?= $_SESSION['user']['first_name'] ?></h2>
+        <a href="actions/logout.php" class="boton boton-rojo">Cerrar sesión</a>
+    <?php endif; ?>
+</div>
