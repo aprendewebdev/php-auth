@@ -1,16 +1,25 @@
 <?php require_once 'includes/header.inc.php' ?>
 
 <div class="container">
+    <a class="back-btn" href="index.php">Go Home</a>
     <h1>Login</h1>
-    <form action="login_user.php" method="POST">
+    <?php if (isset($_SESSION['status_error'])): ?>
+        <div class="alert alert-error">
+            <?=$_SESSION['status_error']?>
+        </div>
+    <?php endif;?>
+    <form action="actions/login_user.php" method="POST">
         <label for="email">Email</label>
         <input type="email" name="email" />
+        <?php echo isset($_SESSION['errors']) ? showError($_SESSION['errors'], 'email') : ''; ?>
 
         <label for="password">Password</label>
         <input name="password" type="password" />
+        <?php echo isset($_SESSION['errors']) ? showError($_SESSION['errors'], 'password') : ''; ?>
 
-        <button class="btn" type="submit">Login</button>
+        <input type="submit" name="submit" value="Login">
     </form>
+    <?php clearErrors(); ?>
 </div>
 
 <?php require_once 'includes/footer.inc.php' ?>

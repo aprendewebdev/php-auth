@@ -58,3 +58,29 @@ body {
     padding: 10px 10px;
     margin-bottom: 10px;
 }
+
+.back-btn {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #ccc;
+    margin-right: 70%;
+}
+
+.alert {
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    background: green;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.alert-error {
+    background: red;
+}
+
+.alert-success {
+    background: green;
+}
